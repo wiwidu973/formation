@@ -1,0 +1,15 @@
+  @import 'themes';
+  @import 'fonts';
+//permet d'appliquer le style à l'enssemble du module sans mettre de div
+  :host{
+    display: block;
+    width: 100%;
+
+  }
+
+  h1{
+    text-align: center;
+    color: $color3;
+    font-size: 3rem;
+
+  }
