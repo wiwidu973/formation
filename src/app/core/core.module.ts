@@ -5,14 +5,23 @@ import { CoreRoutingModule } from './core-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [HeaderComponent, NavComponent, FooterComponent],
+  declarations: [
+    HeaderComponent,
+    NavComponent,
+    FooterComponent],
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    RouterModule
   ],
-  exports: [HeaderComponent, NavComponent, FooterComponent]
+
+  exports: [
+    HeaderComponent,
+    NavComponent,
+    FooterComponent]
 })
 export class CoreModule { }
