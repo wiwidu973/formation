@@ -28,8 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/stylings"]},
             "scripts": []
           },
           "configurations": {
@@ -90,7 +95,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ],  
+            ],
             "styles": [
               "src/styles.scss",
               {

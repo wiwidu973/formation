@@ -15,6 +15,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { UIModule } from './ui/ui.module';
 import { IconsModule } from './icons/icons.module';
 import { TextModule } from './text/text.module';
+import { UiComponent } from './ui/components/ui/ui.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { TextModule } from './text/text.module';
     TextModule
 
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
