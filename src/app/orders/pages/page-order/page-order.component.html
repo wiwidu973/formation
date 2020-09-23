@@ -1,1 +1,13 @@
-<p>page-order works!</p>
+<app-table-light
+  *ngIf="collectionOrder"
+  [headers]="headersOrder"
+  [collections]="collectionOrder"
+>
+  <tr *ngFor="let order of collectionOrder">
+    <td>{{ order.client }}</td>
+    <td>{{ order.typePresta }}</td>
+    <td>{{ order.comment }}</td>
+    <td>{{ order.state }}</td>
+    <td>{{ order.nbJours }}</td>
+  </tr>
+</app-table-light>

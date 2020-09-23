@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/app/shared/models/client';
 import { ClientsService } from '../../services/clients.service';
 
 @Component({
@@ -7,14 +8,23 @@ import { ClientsService } from '../../services/clients.service';
   styleUrls: ['./page-list-client.component.scss'],
 })
 export class PageListClientComponent implements OnInit {
+  private subscribtion: any;
+  public headersClient: string[];
+  public collectionClient: Client[];
   constructor(private clientService: ClientsService) {}
 
   ngOnInit(): void {
-    this.clientService.collection.subscribe((datas) => {
-      console.log(datas);
+    this.subscribtion = this.clientService.collection.subscribe((datas) => {
+      datas.forEach((client) => {
+        this.collectionClient = datas;
+      });
     });
-  }
-  get clients() {
-    return this.clientService.collection;
+    this.headersClient = [
+      'Nom',
+      "chiffre d'affaire",
+      'commentaire',
+      'Etat',
+      'TVA',
+    ];
   }
 }

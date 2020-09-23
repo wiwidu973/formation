@@ -1,3 +1,13 @@
-<ul class="nav flex-column">
-  <li *ngFor="let client of clients"></li>
-</ul>
+<app-table-light
+  *ngIf="collectionClient"
+  [headers]="headersClient"
+  [collections]="collectionClient"
+>
+  <tr *ngFor="let client of collectionClient">
+    <td>{{ client.name }}</td>
+    <td>{{ client.ca }}</td>
+    <td>{{ client.comment }}</td>
+    <td>{{ client.state }}</td>
+    <td>{{ client.tva }}</td>
+  </tr>
+</app-table-light>
