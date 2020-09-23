@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { UIRoutingModule } from './ui-routing.module';
-import { UiComponent } from './components/ui/ui.component';
+import { NgModule } from '@angular/core';
 import { IconsModule } from '../icons/icons.module';
-import { CoreModule } from '../core/core.module';
+import { UiComponent } from './components/ui/ui.component';
+import { UIRoutingModule } from './ui-routing.module';
+
 
 
 
