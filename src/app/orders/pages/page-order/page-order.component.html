@@ -9,5 +9,7 @@
     <td>{{ order.comment }}</td>
     <td>{{ order.state }}</td>
     <td>{{ order.nbJours }}</td>
+    <td>{{ order | total }}</td>
+    <td>{{ order | total: "ttc" }}</td>
   </tr>
 </app-table-light>
