@@ -1,4 +1,4 @@
-<app-table-light
+<app-table-dark
   *ngIf="collectionOrder"
   [headers]="headersOrder"
   [collections]="collectionOrder"
@@ -22,12 +22,12 @@
       </select>
     </td>
   </tr>
-</app-table-light>
+</app-table-dark>
 <app-btn [action]="true" label="Action" (clicked)="testButton()"></app-btn>
 <app-btn route="/clients" label="Redirection vers client"></app-btn>
 <app-btn href="http://www.google.com" label="google"></app-btn>
 <app-btn
-  href="http://www.google.com"
+  href="http://localhost:3000/"
   label="Aller sur mon json serveur"
   (clicked)="testButton2()"
 ></app-btn>
