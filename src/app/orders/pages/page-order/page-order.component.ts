@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Order } from 'src/app/shared/models/Order';
 import { OrdersService } from '../../services/orders.service';
@@ -8,20 +9,17 @@ import { OrdersService } from '../../services/orders.service';
   templateUrl: './page-order.component.html',
   styleUrls: ['./page-order.component.scss'],
 })
-export class PageOrderComponent implements OnInit {
+export class PageOrderComponent implements OnInit, OnDestroy {
   private subscribtion: any;
-  public headersOrder: string[];
-  public collectionOrder: Order[];
+  public headers: string[];
+  public collectionOrders$: Observable<Order[]>;
   public states = Object.values(StateOrder);
-  constructor(private orderService: OrdersService) {}
+  constructor(private ordersService: OrdersService) {}
 
   ngOnInit(): void {
-    this.subscribtion = this.orderService.collection.subscribe((datas) => {
-      datas.forEach((order) => {
-        this.collectionOrder = datas;
-      });
-    });
-    this.headersOrder = [
+    this.collectionOrders$ = this.ordersService.collection;
+
+    this.headers = [
       'Client',
       'Type de Prestation',
       'commentaire',
@@ -32,15 +30,13 @@ export class PageOrderComponent implements OnInit {
     ];
   }
   public changeState(item: Order, event) {
-    this.orderService
+    this.ordersService
       .changeState(item, event.target.value)
       .subscribe((result) => {
         item.state = result.state;
       });
   }
-  ngOnDestroy(): void {
-    this.subscribtion.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
   public testButton() {
     alert('click sur le bouton');

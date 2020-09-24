@@ -1,9 +1,9 @@
 <app-table-dark
-  *ngIf="collectionOrder"
+  *ngIf="collectionOrders$ | async as collections"
+  [headers]
   [headers]="headersOrder"
-  [collections]="collectionOrder"
 >
-  <tr *ngFor="let order of collectionOrder">
+  <tr *ngFor="let order of collections">
     <td>{{ order.client }}</td>
     <td>{{ order.typePresta }}</td>
     <td>{{ order.comment | titlecase }}</td>
