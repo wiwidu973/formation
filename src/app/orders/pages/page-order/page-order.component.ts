@@ -41,4 +41,11 @@ export class PageOrderComponent implements OnInit {
   ngOnDestroy(): void {
     this.subscribtion.unsubscribe();
   }
+
+  public testButton() {
+    alert('click sur le bouton');
+  }
+  public testButton2() {
+    alert('click sur le bouton');
+  }
 }
