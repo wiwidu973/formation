@@ -16,7 +16,7 @@ export class Order implements OrderI {
   tjmHt: number = 300;
   nbJours: number = 1;
   tva: number = 20;
-  state: StateOrder = StateOrder.CONFIRM;
+  state: StateOrder = StateOrder.CONFIRMED;
   typePresta: string;
   client: string;
   comment: string;
