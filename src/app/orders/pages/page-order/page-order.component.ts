@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Order } from 'src/app/shared/models/Order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -11,6 +12,7 @@ export class PageOrderComponent implements OnInit {
   private subscribtion: any;
   public headersOrder: string[];
   public collectionOrder: Order[];
+  public states = Object.values(StateOrder);
   constructor(private orderService: OrdersService) {}
 
   ngOnInit(): void {
@@ -23,8 +25,20 @@ export class PageOrderComponent implements OnInit {
       'Client',
       'Type de Prestation',
       'commentaire',
-      'Etat',
       'Nombre de Jours',
+      'Total HT',
+      'Total TTC',
+      'Etat',
     ];
+  }
+  public changeState(item: Order, event) {
+    this.orderService
+      .changeState(item, event.target.value)
+      .subscribe((result) => {
+        item.state = result.state;
+      });
+  }
+  ngOnDestroy(): void {
+    this.subscribtion.unsubscribe();
   }
 }

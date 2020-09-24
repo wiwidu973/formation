@@ -6,10 +6,20 @@
   <tr *ngFor="let order of collectionOrder">
     <td>{{ order.client }}</td>
     <td>{{ order.typePresta }}</td>
-    <td>{{ order.comment }}</td>
-    <td>{{ order.state }}</td>
+    <td>{{ order.comment | titlecase }}</td>
     <td>{{ order.nbJours }}</td>
     <td>{{ order | total }}</td>
     <td>{{ order | total: "ttc" }}</td>
+    <td>
+      <select (change)="changeState(order, $event)">
+        <option
+          *ngFor="let state of states"
+          [value]="state"
+          [selected]="state == order.state"
+        >
+          {{ state }}
+        </option>
+      </select>
+    </td>
   </tr>
 </app-table-light>
