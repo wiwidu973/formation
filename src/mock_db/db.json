@@ -39,36 +39,6 @@
       "client": "Atos",
       "comment": "Comment pour Atos",
       "id": 4
-    },
-    {
-      "tjmHt": 300,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "client": "fsdv",
-      "comment": "sqgqgv",
-      "id": 5,
-      "typePresta": "ca"
-    },
-    {
-      "tjmHt": null,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "client": "fsdv",
-      "comment": "c'est la vie",
-      "id": 6,
-      "typePresta": "bimBamBoom"
-    },
-    {
-      "tjmHt": 300,
-      "nbJours": 1,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "client": "fsdv",
-      "comment": "sqgqgv",
-      "id": 7,
-      "typePresta": "bimBamBoom"
     }
   ],
   "clients": [

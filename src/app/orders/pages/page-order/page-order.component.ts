@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Order } from 'src/app/shared/models/Order';
 import { OrdersService } from '../../services/orders.service';
@@ -13,13 +13,15 @@ import { OrdersService } from '../../services/orders.service';
 export class PageOrderComponent implements OnInit, OnDestroy {
   private subscribtion: any;
   public headers: string[];
-  public collectionOrders$: Observable<Order[]>;
+  public collectionOrders$: Subject<Order[]> = new Subject();
   public states = Object.values(StateOrder);
 
   constructor(private ordersService: OrdersService, private router: Router) {}
 
   ngOnInit(): void {
-    this.collectionOrders$ = this.ordersService.collection;
+    this.ordersService.collection.subscribe((collection) => {
+      this.collectionOrders$.next(collection);
+    });
 
     this.headers = [
       'Client',
@@ -49,5 +51,12 @@ export class PageOrderComponent implements OnInit, OnDestroy {
   }
   public edit(item: Order) {
     this.router.navigate(['orders', 'edit', item.id]);
+  }
+  public deleteItem(item: Order) {
+    this.ordersService.deleteOrder(item).subscribe((Response) => {
+      this.ordersService.collection.subscribe((collection) => {
+        this.collectionOrders$.next(collection);
+      });
+    });
   }
 }

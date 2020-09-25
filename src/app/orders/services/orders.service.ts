@@ -43,4 +43,7 @@ export class OrdersService {
   public getById(id: string) {
     return this.http.get<Order>(`${this.urlApi}orders/${id}`);
   }
+  public deleteOrder(item: Order): Observable<Order> {
+    return this.http.delete<Order>(`${this.urlApi}orders/${item.id}`);
+  }
 }
