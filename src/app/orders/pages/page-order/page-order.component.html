@@ -1,33 +1,39 @@
-<app-table-dark
-  *ngIf="collectionOrders$ | async as collections"
-  [headers]
-  [headers]="headersOrder"
->
-  <tr *ngFor="let order of collections">
-    <td>{{ order.client }}</td>
-    <td>{{ order.typePresta }}</td>
-    <td>{{ order.comment | titlecase }}</td>
-    <td>{{ order.nbJours }}</td>
-    <td>{{ order | total }}</td>
-    <td>{{ order | total: "ttc" }}</td>
-    <td appState [state]="order.state">
-      <select (change)="changeState(order, $event)">
-        <option
-          *ngFor="let state of states"
-          [value]="state"
-          [selected]="state == order.state"
-        >
-          {{ state }}
-        </option>
-      </select>
-    </td>
-  </tr>
-</app-table-dark>
-<app-btn [action]="true" label="Action" (clicked)="testButton()"></app-btn>
-<app-btn route="/clients" label="Redirection vers client"></app-btn>
-<app-btn href="http://www.google.com" label="google"></app-btn>
-<app-btn
-  href="http://localhost:3000/"
-  label="Aller sur mon json serveur"
-  (clicked)="testButton2()"
-></app-btn>
+<app-template-b title="lCommandes" subtitle="Liste">
+  <app-table-dark
+    *ngIf="collectionOrders$ | async as collections"
+    [headers]
+    [headers]="headersOrder"
+  >
+    <tr *ngFor="let order of collections">
+      <td>{{ order.client }}</td>
+      <td>{{ order.typePresta }}</td>
+      <td>{{ order.comment | titlecase }}</td>
+      <td>{{ order.nbJours }}</td>
+      <td>{{ order | total }}</td>
+      <td>{{ order | total: "ttc" }}</td>
+      <td appState [state]="order.state">
+        <select (change)="changeState(order, $event)">
+          <option
+            *ngFor="let state of states"
+            [value]="state"
+            [selected]="state == order.state"
+          >
+            {{ state }}
+          </option>
+        </select>
+      </td>
+      <td>
+        <app-icon-update (click)="edit(order)"></app-icon-update>
+        <app-icon-delete></app-icon-delete>
+      </td>
+    </tr>
+  </app-table-dark>
+  <app-btn [action]="true" label="Action" (clicked)="testButton()"></app-btn>
+  <app-btn route="add" label="Add"></app-btn>
+  <app-btn href="http://www.google.com" label="google"></app-btn>
+  <app-btn
+    href="http://localhost:3000/"
+    label="Aller sur mon json serveur"
+    (clicked)="testButton2()"
+  ></app-btn>
+</app-template-b>

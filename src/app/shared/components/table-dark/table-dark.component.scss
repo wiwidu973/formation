@@ -10,3 +10,25 @@
     background-color: $color-success;
   }
 }
+:host-context(app-template-a) {
+  .table-dark {
+    color: aliceblue;
+  }
+}
+
+:host-context(app-template-b) {
+  .table-dark {
+    color: $color2;
+  }
+}
+app-template-a {
+  .table-dark {
+    color: #ffffff;
+  }
+}
+
+app-template-b {
+  .table-dark {
+    color: #ffffff;
+  }
+}

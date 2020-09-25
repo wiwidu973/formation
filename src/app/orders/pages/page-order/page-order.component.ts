@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { Order } from 'src/app/shared/models/Order';
@@ -14,7 +15,8 @@ export class PageOrderComponent implements OnInit, OnDestroy {
   public headers: string[];
   public collectionOrders$: Observable<Order[]>;
   public states = Object.values(StateOrder);
-  constructor(private ordersService: OrdersService) {}
+
+  constructor(private ordersService: OrdersService, private router: Router) {}
 
   ngOnInit(): void {
     this.collectionOrders$ = this.ordersService.collection;
@@ -27,6 +29,7 @@ export class PageOrderComponent implements OnInit, OnDestroy {
       'Total HT',
       'Total TTC',
       'Etat',
+      'Actions',
     ];
   }
   public changeState(item: Order, event) {
@@ -43,5 +46,8 @@ export class PageOrderComponent implements OnInit, OnDestroy {
   }
   public testButton2() {
     alert('click sur le bouton');
+  }
+  public edit(item: Order) {
+    this.router.navigate(['orders', 'edit', item.id]);
   }
 }

@@ -1,5 +1,5 @@
-<button *ngIf="action" class="btn btn-primary" (click)="doAction()">
+<button *ngIf="action" class="btn" (click)="doAction()">
   {{ label }}
 </button>
-<a *ngIf="route" [routerLink]="route" class="btn btn-primary">{{ label }}</a>
-<a *ngIf="href" [href]="href" class="btn btn-primary">{{ label }}</a>
+<a *ngIf="route" [routerLink]="route" class="btn">{{ label }}</a>
+<a *ngIf="href" [href]="href" class="btn">{{ label }}</a>

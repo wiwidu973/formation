@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageOrderAddComponent } from './page-order-add.component';
+import { IconDeleteComponent } from './icon-delete.component';
 
-describe('PageOrderAddComponent', () => {
-  let component: PageOrderAddComponent;
-  let fixture: ComponentFixture<PageOrderAddComponent>;
+describe('IconDeleteComponent', () => {
+  let component: IconDeleteComponent;
+  let fixture: ComponentFixture<IconDeleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageOrderAddComponent ]
+      declarations: [ IconDeleteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageOrderAddComponent);
+    fixture = TestBed.createComponent(IconDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

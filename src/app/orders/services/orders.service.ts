@@ -36,4 +36,11 @@ export class OrdersService {
   public updateOrder(item: Order): Observable<Order> {
     return this.http.put<Order>(`${this.urlApi}orders/${item.id}`, item);
   }
+
+  public addOrder(item: Order): Observable<Order> {
+    return this.http.post<Order>(`${this.urlApi}orders`, item);
+  }
+  public getById(id: string) {
+    return this.http.get<Order>(`${this.urlApi}orders/${id}`);
+  }
 }

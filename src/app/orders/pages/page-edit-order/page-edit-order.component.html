@@ -1,0 +1,7 @@
+<app-template-a title="commande" subtitle="Edition">
+  <app-form-order
+    *ngIf="order$ | async as item"
+    [order]="item"
+    (clicked)="edit($event)"
+  ></app-form-order>
+</app-template-a>

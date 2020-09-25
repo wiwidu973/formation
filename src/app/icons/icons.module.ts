@@ -1,20 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { IconsRoutingModule } from './icons-routing.module';
-import { IconMenuComponent as IconMenuComponent } from './components/icon-menu/icon-menu.component';
+import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { IconDeleteComponent } from './components/icon-delete/icon-delete.component';
+import { IconMenuComponent } from './components/icon-menu/icon-menu.component';
+import { IconUpdateComponent } from './components/icon-update/icon-update.component';
+import { IconsRoutingModule } from './icons-routing.module';
 
 @NgModule({
-  declarations: [IconMenuComponent],
-  imports: [
-    CommonModule,
-    IconsRoutingModule,
-    FontAwesomeModule
-  ],
-  exports:[
-    IconMenuComponent
-  ]
+  declarations: [IconMenuComponent, IconDeleteComponent, IconUpdateComponent],
+  imports: [CommonModule, IconsRoutingModule, FontAwesomeModule],
+  exports: [IconMenuComponent, IconUpdateComponent, IconDeleteComponent],
 })
-export class IconsModule { }
+export class IconsModule {}
