@@ -23,13 +23,23 @@
       <label for="tjmHt">Taux Journalier</label>
       <input
         formControlName="tjmHt"
-        type="number"
+        type="text"
         class="form-control"
         id="tjmHt"
       />
-      <div class="alert alert-danger" *ngIf="form.get('tjmHt').touched">
+      <!-- <div class="alert alert-danger" *ngIf="form.get('tjmHt').touched">
         remplissage requis
-      </div>
+      </div> -->
+      <!-- <div invalidMessage="tjmHt"  class="alert alert-danger">
+<p *invalidType="'required'">
+  champs requis
+
+</p>
+<p *invalidType="'minlength'">
+  Taille minimale non respectée
+
+</p>
+      </div> -->
     </div>
     <div class="form-group">
       <label for="tva">tva</label>

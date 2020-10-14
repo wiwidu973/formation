@@ -4,7 +4,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CANCEL",
       "typePresta": "formation55",
       "client": "M2i",
       "comment": "merci m2i",
@@ -39,6 +39,26 @@
       "client": "Atos",
       "comment": "Comment pour Atos",
       "id": 4
+    },
+    {
+      "tjmHt": "3000",
+      "nbJours": 1,
+      "tva": 20,
+      "state": "CANCEL",
+      "client": "'(",
+      "comment": null,
+      "id": 5,
+      "typePresta": null
+    },
+    {
+      "tjmHt": 300,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "CONFIRMED",
+      "client": "rd",
+      "comment": "erqgt",
+      "id": 6,
+      "typePresta": "mkjn"
     }
   ],
   "clients": [

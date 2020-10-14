@@ -18,7 +18,7 @@ export class FormOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formB.group({
-      tjmHt: [this.order.tjmHt, Validators.required],
+      tjmHt: [this.order.tjmHt, Validators.compose([Validators.required, Validators.minLength(2)])],
       nbJours: [this.order.nbJours],
       tva: [this.order.tva],
       state: [this.order.state],
@@ -38,6 +38,6 @@ export class FormOrderComponent implements OnInit {
     } else {
       this.clicked.emit(this.form.value);
     }
-    this.clicked.emit(this.form.value);
+
   }
 }

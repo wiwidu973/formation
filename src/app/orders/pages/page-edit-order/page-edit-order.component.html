@@ -2,6 +2,23 @@
   <app-form-order
     *ngIf="order$ | async as item"
     [order]="item"
-    (clicked)="edit($event)"
+    (clicked)="openUpdateModal($event)"
   ></app-form-order>
 </app-template-a>
+<ng-template #updateOrderModal let-modal>
+  <app-modal title="Confirmer modification" (dismissed)="dismissModal()">
+    <div class="modal-body">
+      êtes vous sûr de vouloir valider les modification ?
+
+
+    </div>
+    <div class="modal-footer">
+      <app-btn [action]="true"  (clicked)="dismissModal()" label="Annuler"></app-btn>
+      <app-btn [action]="true" (clicked)="edit(modalValues)" label="Confirmer"></app-btn>
+
+    </div>
+
+  </app-modal>
+
+
+</ng-template>
