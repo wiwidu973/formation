@@ -1,0 +1,24 @@
+<app-template-a title="commande" subtitle="Edition">
+  <app-form-client
+    *ngIf="client$ | async as item"
+    [client]="item"
+    (clicked)="openUpdateModal($event)"
+  ></app-form-client>
+</app-template-a>
+<ng-template #updateClientModal let-modal>
+  <app-modal title="Confirmer modification" (dismissed)="dismissModal()">
+    <div class="modal-body">
+      êtes vous sûr de vouloir valider les modification ?
+
+
+    </div>
+    <div class="modal-footer">
+      <app-btn [action]="true"  (clicked)="dismissModal()" label="Annuler"></app-btn>
+      <app-btn [action]="true" (clicked)="edit(modalValues)" label="Confirmer"></app-btn>
+
+    </div>
+
+  </app-modal>
+
+
+</ng-template>

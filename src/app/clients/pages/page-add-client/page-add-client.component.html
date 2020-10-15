@@ -1,0 +1,21 @@
+<app-template-b title="client" subtitle="AJOUTER">
+  <app-form-client (clicked)="openaddModal($event)"></app-form-client>
+</app-template-b>
+<ng-template #addClientModal let-modal>
+  <app-modal title="Confirmer modification" (dismissed)="dismissModal()">
+    <div class="modal-body">
+      êtes vous sûr de vouloir valider les modification ?
+
+
+    </div>
+    <div class="modal-footer">
+      <app-btn [action]="true"  (clicked)="dismissModal()" label="Annuler"></app-btn>
+      <app-btn [action]="true" (clicked)="addClient(modalValues)" label="Confirmer"></app-btn>
+
+    </div>
+
+  </app-modal>
+
+
+</ng-template>
+

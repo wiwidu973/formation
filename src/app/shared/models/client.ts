@@ -1,3 +1,4 @@
+import { StateClient } from '../enums/state-client.enum';
 import { ClientI } from '../interfaces/client-i';
 
 export class Client implements ClientI {
@@ -6,7 +7,7 @@ export class Client implements ClientI {
   name: String;
   ca: number;
   comment: string;
-  state: string;
+  state: StateClient;
 
   constructor(obj?: Partial<Client>) {
     if (obj) {

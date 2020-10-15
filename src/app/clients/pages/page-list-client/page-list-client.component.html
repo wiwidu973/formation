@@ -1,13 +1,43 @@
+<app-template-b title="les Clients" subtitle="Liste">
 <app-table-light
-  *ngIf="collectionClient"
+  *ngIf="collectionClients$ |async as collections"
+  [headers]
   [headers]="headersClient"
-  [collections]="collectionClient"
+
 >
-  <tr *ngFor="let client of collectionClient">
+  <tr *ngFor="let client of collections">
     <td>{{ client.name }}</td>
     <td>{{ client.ca }}</td>
     <td>{{ client.comment }}</td>
-    <td>{{ client.state }}</td>
     <td>{{ client.tva }}</td>
+
+    <td appState [state]="client.state">
+      <select (change)="changeState(client, $event)">
+        <option
+          *ngFor="let state of states"
+          [value]="state"
+          [selected]="state == client.state"
+        >
+          {{ state }}
+        </option>
+      </select>
+    </td>
+    <td>
+      <app-icon-update (click)="edit(client)"></app-icon-update>
+      <app-icon-delete (click)="deleteItem(client)"></app-icon-delete>
+    </td>
   </tr>
+
+
 </app-table-light>
+
+<app-btn [action]="true" label="Action" (clicked)="testButton()"></app-btn>
+<app-btn route="add" label="Add"></app-btn>
+<app-btn href="http://www.google.com" label="google"></app-btn>
+<app-btn
+  href="http://localhost:3000/"
+  label="Aller sur mon json serveur"
+  (clicked)="testButton2()"
+></app-btn>
+
+</app-template-b>

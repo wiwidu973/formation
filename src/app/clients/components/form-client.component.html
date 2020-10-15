@@ -1,0 +1,76 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label i18n for="type">Type</label>
+      <input
+        formControlName="typePresta"
+        type="text"
+        class="form-control"
+        id="type"
+      />
+    </div>
+
+    <div class="form-group">
+      <label i18n for="nom">nom</label>
+      <input
+        formControlName="nom"
+        type="text"
+        class="form-control"
+        id="nom"
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label i18n for="tva">tva</label>
+      <input
+        formControlName="tva"
+        type="number"
+        class="form-control"
+        id="tva"
+      />
+    </div>
+    <div class="form-group">
+      <label i18n for="comment">comment</label>
+      <input
+        formControlName="comment"
+        type="text"
+        class="form-control"
+        id="comment"
+      />
+
+    <!-- <div class="alert alert-danger" *ngIf="form.get('comment').touched">
+      remplissage requis
+    </div>
+    <div invalidMessage="comment"  class="alert alert-danger">
+<p i18n *invalidType="'required'">
+champs requis
+
+</p>
+<p i18n *invalidType="'minlength'">
+Taille minimale non respectée
+
+</p>
+    </div> -->
+    </div>
+
+    <div class="form-group">
+      <label i18n for="ca">chiffre d'affaire</label>
+      <input
+        formControlName="ca"
+        type="number"
+        class="form-control"
+        id="ca"
+      />
+    </div>
+    <div class="form-group">
+      <label i18n for="state">Etat</label>
+      <select formControlName="state" class="form-control" id="state">
+        <option *ngFor="let state of states" [ngValue]="state">
+          {{ state }}
+        </option>
+      </select>
+    </div>
+    <app-btn label="Valider" [action]="true" (clicked)="onSubmit()"></app-btn>
+  </form>
+</div>
