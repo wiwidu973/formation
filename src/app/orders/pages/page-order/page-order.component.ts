@@ -12,7 +12,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageOrderComponent implements OnInit, OnDestroy {
   private subscribtion: any;
-  public headers: string[];
+  public headersOrder: string[];
   public collectionOrders$: Subject<Order[]> = new Subject();
   public states = Object.values(StateOrder);
 
@@ -23,7 +23,7 @@ export class PageOrderComponent implements OnInit, OnDestroy {
       this.collectionOrders$.next(collection);
     });
 
-    this.headers = [
+    this.headersOrder = [
       'Client',
       'Type de Prestation',
       'commentaire',

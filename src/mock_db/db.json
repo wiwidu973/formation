@@ -60,7 +60,23 @@
       "id": 6,
       "typePresta": "mkjn"
     }
+
+
   ],
+
+  "orders2": [
+    {
+      "tjmHt": 1200,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "CANCEL",
+      "typePresta": "formation55",
+      "client": "Modis",
+      "comment": "merci m2i",
+      "id": 1
+    }
+  ],
+
   "clients": [
     {
       "ca": 120000,
@@ -70,6 +86,7 @@
       "comment": "1fcyj",
       "id": 1
     },
+
     {
       "tva": 20,
       "state": "CANCEL",

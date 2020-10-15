@@ -21,3 +21,51 @@
   </app-table-dark>
 
 </app-template-b>
+
+<!-- <app-template-b title="commande1" subtitle="Liste">
+  <app-table-dark
+    *ngIf="listOrder1 "
+    [headers]
+    [headers]="headersOrder"
+  >
+    <tr *ngFor="let order of listOrder1">
+      <td>{{ order.client }}</td>
+      <td>{{ order.typePresta }}</td>
+      <td>{{ order.comment | titlecase }}</td>
+      <td>{{ order.nbJours }}</td>
+      <td>{{ order | total }}</td>
+      <td>{{ order | total: "ttc" }}</td>
+      <td appState [state]="order.state">
+
+            {{ order.state }}
+
+      </td>
+
+    </tr>
+  </app-table-dark>
+
+</app-template-b>
+
+<app-template-b title="commande2" subtitle="Liste">
+  <app-table-dark
+    *ngIf="listOrder2"
+    [headers]
+    [headers]="headersOrder"
+  >
+    <tr *ngFor="let order of listOrder2">
+      <td>{{ order.client }}</td>
+      <td>{{ order.typePresta }}</td>
+      <td>{{ order.comment | titlecase }}</td>
+      <td>{{ order.nbJours }}</td>
+      <td>{{ order | total }}</td>
+      <td>{{ order | total: "ttc" }}</td>
+      <td appState [state]="order.state">
+
+            {{ order.state }}
+
+      </td>
+
+    </tr>
+  </app-table-dark>
+
+</app-template-b> -->
