@@ -25,6 +25,7 @@
     <td>
       <app-icon-update (click)="edit(client)"></app-icon-update>
       <app-icon-delete (click)="deleteItem(client)"></app-icon-delete>
+      <app-btn route="/orders/recap/{{client.id}}" label="Consulter "></app-btn>
     </td>
   </tr>
 

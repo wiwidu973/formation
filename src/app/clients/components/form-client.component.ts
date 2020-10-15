@@ -24,7 +24,7 @@ export class ComponentsComponent implements OnInit {
       state: [this.client.state],
       client: [
         this.client.name,
-        Validators.compose([Validators.required]),
+
       ],
       comment: [this.client.comment, Validators.minLength(2)],
       id: [this.client.id],

@@ -6,7 +6,7 @@
       "tva": 20,
       "state": "CANCEL",
       "typePresta": "formation55",
-      "client": "M2i",
+      "client": "Modis",
       "comment": "merci m2i",
       "id": 1
     },
@@ -26,7 +26,7 @@
       "tva": 20,
       "state": "OPTION",
       "typePresta": "Formation",
-      "client": "nemesys",
+      "client": "Modis",
       "comment": "fssdgh",
       "id": 3
     },
@@ -36,7 +36,7 @@
       "tva": 20,
       "state": "CONFIRMED",
       "typePresta": "Formation",
-      "client": "Atos",
+      "client": "BurGer",
       "comment": "Comment pour Atos",
       "id": 4
     },
@@ -45,7 +45,7 @@
       "nbJours": 1,
       "tva": 20,
       "state": "CANCEL",
-      "client": "'(",
+      "client": "BurGer",
       "comment": null,
       "id": 5,
       "typePresta": null
@@ -55,7 +55,7 @@
       "nbJours": 1,
       "tva": 20,
       "state": "CONFIRMED",
-      "client": "rd",
+      "client": "BurGer",
       "comment": "erqgt",
       "id": 6,
       "typePresta": "mkjn"
@@ -66,9 +66,9 @@
       "ca": 120000,
       "tva": 20,
       "state": "CANCEL",
-      "client": "Modis",
+      "name": "Modis",
       "comment": "1fcyj",
-      "id": 2
+      "id": 1
     },
     {
       "tva": 20,

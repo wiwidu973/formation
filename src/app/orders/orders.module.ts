@@ -9,9 +9,10 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order/page-add-order.component';
 import { PageOrderComponent } from './pages/page-order/page-order.component';
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
+import { PageRecapOrderComponent } from './pages/page-recap-order/page-recap-order.component';
 
 @NgModule({
-  declarations: [PageOrderComponent, FormOrderComponent, PageAddOrderComponent, PageEditOrderComponent],
+  declarations: [PageOrderComponent, FormOrderComponent, PageAddOrderComponent, PageEditOrderComponent, PageRecapOrderComponent],
   imports: [
     CommonModule,
     OrdersRoutingModule,

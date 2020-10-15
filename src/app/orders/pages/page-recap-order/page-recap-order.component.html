@@ -1,0 +1,23 @@
+<app-template-b title="lCommandes" subtitle="Liste">
+  <app-table-dark
+    *ngIf="collectionOrders$ | async as collections"
+    [headers]
+    [headers]="headersOrder"
+  >
+    <tr *ngFor="let order of collections">
+      <td>{{ order.client }}</td>
+      <td>{{ order.typePresta }}</td>
+      <td>{{ order.comment | titlecase }}</td>
+      <td>{{ order.nbJours }}</td>
+      <td>{{ order | total }}</td>
+      <td>{{ order | total: "ttc" }}</td>
+      <td appState [state]="order.state">
+
+            {{ order.state }}
+
+      </td>
+
+    </tr>
+  </app-table-dark>
+
+</app-template-b>

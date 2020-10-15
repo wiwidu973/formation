@@ -30,7 +30,7 @@ export class ClientsService {
   }
 
   public changeState(item: Client, state: StateClient): Observable<Client> {
-    const obj = new Client({ ...item });
+    const obj = new Client({...item });
     obj.state = state;
     return this.updateClient(obj);
   }
@@ -42,7 +42,7 @@ export class ClientsService {
   public addClient(item: Client): Observable<Client> {
     return this.http.post<Client>(`${this.urlApi}clients`, item);
   }
-  public getById(id: string) {
+  public getById(id: string):Observable<Client> {
     return this.http.get<Client>(`${this.urlApi}clients/${id}`);
   }
   public deleteClient(item: Client): Observable<Client> {

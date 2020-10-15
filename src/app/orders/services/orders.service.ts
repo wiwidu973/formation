@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
+import { Client } from 'src/app/shared/models/client';
 import { Order } from 'src/app/shared/models/Order';
 import { environment } from 'src/environments/environment';
 
@@ -46,4 +47,16 @@ export class OrdersService {
   public deleteOrder(item: Order): Observable<Order> {
     return this.http.delete<Order>(`${this.urlApi}orders/${item.id}`);
   }
+
+  public getOrderByClientName(name: string) : Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.urlApi}orders?client=${name}`).pipe(
+      map((col) => {
+        return col.map((item) => {
+          return new Order(item);
+        })
+
+    })
+
+      )
+}
 }

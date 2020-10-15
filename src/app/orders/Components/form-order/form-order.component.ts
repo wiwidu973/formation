@@ -18,14 +18,12 @@ export class FormOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formB.group({
-      tjmHt: [this.order.tjmHt, Validators.compose([Validators.required, Validators.minLength(2)])],
+      tjmHt: [this.order.tjmHt],
       nbJours: [this.order.nbJours],
       tva: [this.order.tva],
       state: [this.order.state],
       client: [
-        this.order.client,
-        Validators.compose([Validators.required, Validators.minLength(2)]),
-      ],
+        this.order.client,],
       comment: [this.order.comment, Validators.minLength(2)],
       id: [this.order.id],
       typePresta: [this.order.typePresta],
@@ -34,6 +32,7 @@ export class FormOrderComponent implements OnInit {
 
   public onSubmit() {
     if (this.form.invalid) {
+      debugger
       alert('veuillez remplir le champ requis');
     } else {
       this.clicked.emit(this.form.value);
